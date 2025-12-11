@@ -13,6 +13,7 @@ int	main(int argc, char **argv)
 	}
 	ft_memset(&mlx, 0, sizeof(mlx));
 	ft_memset(&window, 0, sizeof(window));
+	init_data(&mlx);
 	handle_window(&mlx);
 	//close_window(&mlx);
 	return (0);
