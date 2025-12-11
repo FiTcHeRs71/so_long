@@ -2,14 +2,17 @@
 # define SO_LONG_H
 
 # include "../libft/include/libft.h"
-# include "so_long_struct.h"
 # include "../minilibx-linux/mlx.h"
+# include "so_long_struct.h"
+# include <X11/keysym.h>
 
-# define	WIDTH	400
-# define	HEIGHT	400
+# define WIDTH 1500
+# define HEIGHT 1000
 
 /* window.c */
-void	close_window(t_mlx *mlx);
-void	open_window(t_mlx *mlx);
+void	handle_window(t_mlx *mlx);
+int		handle_keyboard_input(int keycode, t_mlx *mlx);
+int		close_window(t_mlx *mlx);
+
 
 #endif
