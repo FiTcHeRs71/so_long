@@ -4,6 +4,7 @@ NAME_BONUS = pipex_bonus
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
+MINILIBX_FLAG = -lmlx -lXext -lX11
 INCLUDES = -I./include -I./libft/include
 
 SRCDIR = src
@@ -12,7 +13,7 @@ OBJDIR = obj
 OBJDIR_BONUS = obj_bonus
 
 SRCS = $(addprefix $(SRCDIR)/, \
-	so_long.c)
+	so_long.c window.c)
 
 SRCS_BONUS =
 

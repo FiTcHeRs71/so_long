@@ -1,10 +1,16 @@
-#ifndef SO_LONG_STRUCT
-# define SO_LONG_STRUCT
+#ifndef SO_LONG_STRUCT_H
+# define SO_LONG_STRUCT_H
 
-typedef struct s_data
+typedef struct s_mlx
 {
+	void	*mlx_connection;
+	void	*mlx_window;
+}			t_mlx;
 
-}	t_data;
-
+typedef struct s_window
+{
+	int		sixe_x;
+	int		size_y;
+}			t_window;
 
 #endif
