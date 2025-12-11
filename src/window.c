@@ -17,6 +17,7 @@ void	handle_window(t_mlx *mlx)
 	}
 	mlx->img.img_ptr = mlx_new_image(mlx, WIDTH, HEIGHT);
 	mlx->img.pxl_ptr = mlx_get_data_addr(mlx->img.img_ptr, &mlx->img.bits, &mlx->img.len, &mlx->img.endlian);
+	mlx_put_image_to_window(mlx, mlx->mlx_window, mlx->img.img_ptr, 0, 0);
 	mlx_key_hook(mlx->mlx_window, handle_keyboard_input, mlx);
 	mlx_hook(mlx->mlx_window, 17, 0, close_window, mlx);
 	mlx_loop(mlx->mlx_connect);
@@ -37,8 +38,41 @@ int	handle_keyboard_input(int keycode, t_mlx *mlx)
 	{
 		resize_window(mlx, mlx->window.size_x - 100, mlx->window.size_y -100);
 	}
+	else if (keycode == XK_r)
+	{
+		color_screen(mlx, 0xff0000);
+	}
 	ft_printf("%d touch press\n\n", keycode);
 	return (0);
+}
+
+void	color_screen(t_mlx *mlx, int color)
+{
+	int	x;
+	int	y;
+
+	y = 1;
+	x = 1;
+	while (y < HEIGHT)
+	{
+		x = 0;
+		while (x < WIDTH)
+		{
+			my_pixel_put(&mlx->img, x, y, color);
+			x++;
+			y++;
+		}
+		y++;
+	}
+
+}
+
+void	my_pixel_put(t_img *img, int x, int y, int color)
+{
+	int	offset;
+
+	offset = (img->len * y) + (x * (img->bits / 8));
+	*((unsigned int *)(offset + img->pxl_ptr)) = color;
 }
 
 void	resize_window(t_mlx *mlx, int new_width, int new_height)

@@ -18,8 +18,10 @@ void	handle_window(t_mlx *mlx);
 int		handle_keyboard_input(int keycode, t_mlx *mlx);
 int		close_window(t_mlx *mlx);
 void	resize_window(t_mlx *mlx, int new_width, int new_height);
+void	color_screen(t_mlx *mlx, int color);
+void	my_pixel_put(t_img *img, int x, int y, int color);
 
 /* init_data.c */
-void	init_data(t_mlx *mlx);
+void init_data(t_mlx *mlx);
 
 #endif
