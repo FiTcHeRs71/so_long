@@ -14,7 +14,7 @@ OBJDIR = obj
 OBJDIR_BONUS = obj_bonus
 
 SRCS = $(addprefix $(SRCDIR)/, \
-	so_long.c window.c init_data.c)
+	so_long.c window.c init_data.c set_up_map.c)
 
 SRCS_BONUS =
 

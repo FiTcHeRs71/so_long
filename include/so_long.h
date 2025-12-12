@@ -8,10 +8,10 @@
 
 # define WIDTH 900
 # define HEIGHT 700
-# define MIN_WIDTH 800
+/* # define MIN_WIDTH 800
 # define MIN_HEIGHT 600
 # define MAX_WIDTH 4000
-# define MAX_HEIGHT 2000
+# define MAX_HEIGHT 2000 */
 
 /* window.c */
 void	handle_window(t_mlx *mlx);
@@ -23,5 +23,8 @@ void	my_pixel_put(t_img *img, int x, int y, int color);
 
 /* init_data.c */
 void init_data(t_mlx *mlx);
+
+/* set_up_map.c */
+void	set_up_map(t_mlx *mlx);
 
 #endif
