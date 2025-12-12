@@ -22,7 +22,9 @@ void	color_screen(t_mlx *mlx, int color);
 void	my_pixel_put(t_img *img, int x, int y, int color);
 
 /* init_data.c */
-void init_data(t_mlx *mlx);
+void	init_data(t_mlx *mlx, char **argv);
+int		count_rows(int fd);
+int		count_line(int fd);
 
 /* set_up_map.c */
 void	set_up_map(t_mlx *mlx);

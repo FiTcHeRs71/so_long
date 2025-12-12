@@ -13,9 +13,9 @@ int	main(int argc, char **argv)
 	}
 	ft_memset(&mlx, 0, sizeof(mlx));
 	ft_memset(&window, 0, sizeof(window));
-	init_data(&mlx);
+	init_data(&mlx, argv);
 	handle_window(&mlx);
-	set_up_map(&mlx);
+	//set_up_map(&mlx);
 	//close_window(&mlx);
 	return (0);
 } 

@@ -22,7 +22,7 @@ SRCS_PRINTF = $(addprefix $(SRCDIR)/ft_printf/, \
 	ft_print_char.c ft_printf.c ft_print_int.c ft_print_void.c)
 
 SRCS_GNL = $(addprefix $(SRCDIR)/get_next_line/, \
-	get_next_line.c get_next_line_utils.c)
+	get_next_line.c)
 
 SRCS = $(SRCS_BASIC) $(SRCS_PRINTF) $(SRCS_GNL)
 

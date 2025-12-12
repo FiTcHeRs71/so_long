@@ -9,7 +9,7 @@ void	handle_window(t_mlx *mlx)
 		// ft_error ?
 		exit(EXIT_FAILURE);
 	}
-	mlx->mlx_window = mlx_new_window(mlx->mlx_connect, WIDTH, HEIGHT, "Fitch > Leo sur MK");
+	mlx->mlx_window = mlx_new_window(mlx->mlx_connect, mlx->window.size_x, mlx->window.size_y, "Fitch > Leo sur MK");
 	if (!mlx->mlx_window)
 	{
 		// ft_error, free ?
