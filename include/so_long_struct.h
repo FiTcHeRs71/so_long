@@ -8,7 +8,7 @@ typedef struct s_img
 	int		bits;
 	int		endlian;
 	int		len;
-}t_img;
+}			t_img;
 
 	typedef struct s_window
 {
