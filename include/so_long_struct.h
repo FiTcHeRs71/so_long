@@ -7,6 +7,7 @@ typedef struct s_tex
 	void	*grass;
 	void	*player;
 	void	*esc;
+	void	*eat;
 	int		width;
 	int		height;
 
@@ -31,6 +32,7 @@ typedef struct s_mlx
 {
 	void		*mlx_connect;
 	void		*mlx_window;
+	int			fd;
 	t_window	window;
 	t_img		img;
 	t_tex		tex;

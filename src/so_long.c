@@ -4,7 +4,6 @@
 int	main(int argc, char **argv)
 {
 	t_mlx		mlx;
-	t_window	window;
 
 	if (argc < 0)
 	{
@@ -12,11 +11,10 @@ int	main(int argc, char **argv)
 		return(0); // a check
 	}
 	ft_memset(&mlx, 0, sizeof(mlx));
-	ft_memset(&window, 0, sizeof(window));
 	init_data(&mlx, argv);
 	handle_window(&mlx);
 	load_textures(&mlx);
-	set_up_map(&mlx);
+	set_up_map(&mlx, argv);
 	mlx_loop(mlx.mlx_connect);
 
 	//close_window(&mlx);

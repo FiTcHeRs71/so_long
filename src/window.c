@@ -17,16 +17,30 @@ void	handle_window(t_mlx *mlx)
 	}
 	mlx_key_hook(mlx->mlx_window, handle_keyboard_input, mlx);
 	mlx_hook(mlx->mlx_window, 17, 0, close_window, mlx);
-	mlx_put_image_to_window(mlx->mlx_connect, mlx->mlx_window, mlx->tex.esc, 0, 0);
 }
 int	handle_keyboard_input(int keycode, t_mlx *mlx)
 {
 	if (keycode == XK_Escape)
-	{
+	{	
 		ft_printf("%d Esc pressed - closing window\n", keycode);
 		close_window(mlx);
 	}
-	ft_printf("%d touch press\n\n", keycode);
+	if (keycode == XK_w || keycode == XK_Up)
+	{
+		ft_printf("w");
+	}
+	if (keycode == XK_a || keycode == XK_Left)
+	{
+		ft_printf("a");
+	}
+	if (keycode == XK_s || keycode == XK_Down)
+	{
+		ft_printf("s");
+	}
+		if (keycode == XK_d || keycode == XK_Right)
+	{
+		ft_printf("d");
+	}
 	return (0);
 }
 

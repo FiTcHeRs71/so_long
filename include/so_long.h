@@ -8,10 +8,7 @@
 
 # define WIDTH 900
 # define HEIGHT 700
-/* # define MIN_WIDTH 800
-# define MIN_HEIGHT 600
-# define MAX_WIDTH 4000
-# define MAX_HEIGHT 2000 */
+
 
 /* window.c */
 void	handle_window(t_mlx *mlx);
@@ -27,7 +24,9 @@ int		count_rows(int fd);
 int		count_line(int fd);
 
 /* set_up_map.c */
-void	set_up_map(t_mlx *mlx);
+void	set_up_map(t_mlx *mlx, char **argv);
+void	render_line(char *line, t_mlx *mlx, int y);
+void	draw_with_img(t_mlx *mlx, char c, int x, int y);
 
 /* load_textures.c */
 void	load_textures(t_mlx *mlx);
