@@ -16,7 +16,7 @@ void	init_data(t_mlx *mlx, char **argv)
 	}
 	mlx->args = fill_args(fd);
 	check_map(mlx, mlx->args);
-	mlx->window.size_x = (ft_strlen(mlx->args[0]) - 1) * 64;
+	mlx->window.size_x = (ft_strlen(mlx->args[0])) * 64;
 	mlx->window.size_y = count_line(mlx->args) * 64;
 }
 int	count_line(char	**args)
@@ -31,7 +31,7 @@ int	count_line(char	**args)
 		size_y += 1;
 		i++;
 	}
-	return(size_y + 1);
+	return(size_y);
 }
 
 char	**fill_args(int fd)

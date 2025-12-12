@@ -12,6 +12,7 @@ void	set_up_map(t_mlx *mlx)
 	{
 		render_line(mlx->args[i], mlx, y);
 		y++;
+		i++;
 	}
 }
 
