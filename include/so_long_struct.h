@@ -32,7 +32,8 @@ typedef struct s_mlx
 {
 	void		*mlx_connect;
 	void		*mlx_window;
-	int			fd;
+	int			len;
+	char		**args;
 	t_window	window;
 	t_img		img;
 	t_tex		tex;

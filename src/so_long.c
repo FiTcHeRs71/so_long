@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 	init_data(&mlx, argv);
 	handle_window(&mlx);
 	load_textures(&mlx);
-	set_up_map(&mlx, argv);
+	set_up_map(&mlx);
 	mlx_loop(mlx.mlx_connect);
 
 	//close_window(&mlx);

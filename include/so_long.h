@@ -20,15 +20,19 @@ void	my_pixel_put(t_img *img, int x, int y, int color);
 
 /* init_data.c */
 void	init_data(t_mlx *mlx, char **argv);
-int		count_rows(int fd);
-int		count_line(int fd);
+int		count_line(char **args);
+char	**fill_args(int fd);
 
 /* set_up_map.c */
-void	set_up_map(t_mlx *mlx, char **argv);
+void	set_up_map(t_mlx *mlx);
 void	render_line(char *line, t_mlx *mlx, int y);
 void	draw_with_img(t_mlx *mlx, char c, int x, int y);
 
 /* load_textures.c */
 void	load_textures(t_mlx *mlx);
+
+/* checking_map.c */
+void	check_map(t_mlx *mlx, char **args);
+void	check_arg(char	*line);
 
 #endif

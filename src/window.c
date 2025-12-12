@@ -41,6 +41,7 @@ int	handle_keyboard_input(int keycode, t_mlx *mlx)
 	{
 		ft_printf("d");
 	}
+	ft_printf("%d", keycode);
 	return (0);
 }
 

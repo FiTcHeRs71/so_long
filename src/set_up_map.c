@@ -1,21 +1,18 @@
 
 #include "../include/so_long.h"
 
-void	set_up_map(t_mlx *mlx, char **argv)
+void	set_up_map(t_mlx *mlx)
 {
-	int 	fd;
-	char	*line;
 	int		y;
+	size_t	i;
 
-	fd = open(argv[1], O_RDONLY);
 	y = 0;
-	while ((line = get_next_line(fd)))
+	i = 0;
+	while (mlx->args[i])
 	{
-		render_line(line, mlx, y);
+		render_line(mlx->args[i], mlx, y);
 		y++;
-		free(line);
 	}
-	free(line);
 }
 
 void	render_line(char *line, t_mlx *mlx, int y)

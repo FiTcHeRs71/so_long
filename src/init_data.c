@@ -3,46 +3,52 @@
 
 void	init_data(t_mlx *mlx, char **argv)
 {
+	int	fd;
+
 	if (ft_strnstr(argv[1], ".ber", ft_strlen(argv[1]))== NULL)
 	{
 		//ft_error ( map has to be .ber)
 	}
-	mlx->fd = open(argv[1], O_RDONLY);
-	check_map(t_mlx);
-	if (mlx->fd < 0)
+	fd = open(argv[1], O_RDONLY);	
+	if (fd < 0)
 	{
 		//ft_error, free
 	}
-	mlx->window.size_x = count_rows(mlx->fd) * 64; // check invalid map ?
-	mlx->window.size_y = count_line(mlx->fd) * 64;
+	mlx->args = fill_args(fd);
+	check_map(mlx, mlx->args);
+	mlx->window.size_x = (ft_strlen(mlx->args[0]) - 1) * 64;
+	mlx->window.size_y = count_line(mlx->args) * 64;
 }
-int	count_rows(int fd)
+int	count_line(char	**args)
 {
-	char	*line;
-	int		size_x;
-
-	line = get_next_line(fd);
-	size_x = ft_strlen(line);
-	free(line);
-	return(size_x - 1);
-}
-int	count_line(int fd)
-{
-	char	*line;
+	size_t	i;
 	int		size_y;
 
-	line = get_next_line(fd);
+	i = 0;
 	size_y = 0;
-	while(line)
+	while(args[i])
 	{
 		size_y += 1;
-		free(line);
-		line = get_next_line(fd);
+		i++;
 	}
-	free(line);
 	return(size_y + 1);
 }
-void	check_map(t_mlx *mlx)
+
+char	**fill_args(int fd)
 {
-	
+	char	*line;
+	char	*temp;
+	char	**args;
+
+	temp = ft_strdup("");
+	line = get_next_line(fd);
+	while(line)
+	{
+		temp = ft_strjoin(temp, line);
+		free(line);
+		line = get_next_line (fd);
+	}
+	args = ft_split(temp, '\n');
+	free(temp);
+	return (args);
 }
