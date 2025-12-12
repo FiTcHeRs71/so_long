@@ -9,13 +9,13 @@ void	init_data(t_mlx *mlx, char **argv)
 	{
 		//ft_error ( map has to be .ber)
 	}
-	fd = open(argv[1], O_WRONLY);
+	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 	{
 		//ft_error, free
 	}
-	mlx->window.size_x = count_rows(fd); // check invalid map ?
-	mlx->window.size_y = count_line(fd);
+	mlx->window.size_x = count_rows(fd) * 64; // check invalid map ?
+	mlx->window.size_y = count_line(fd) * 64;
 }
 int	count_rows(int fd)
 {
@@ -25,7 +25,7 @@ int	count_rows(int fd)
 	line = get_next_line(fd);
 	size_x = ft_strlen(line);
 	free(line);
-	return(size_x);
+	return(size_x + 1);
 }
 int	count_line(int fd)
 {
@@ -41,5 +41,5 @@ int	count_line(int fd)
 		line = get_next_line(fd);
 	}
 	free(line);
-	return(size_y);
+	return(size_y + 1);
 }

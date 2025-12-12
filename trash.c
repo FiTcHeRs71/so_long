@@ -81,3 +81,6 @@ void	resize_window(t_mlx *mlx, int new_width, int new_height)
 	mlx_key_hook(mlx->mlx_window, handle_keyboard_input, mlx);
 	mlx_hook(mlx->mlx_window, 17, 0, close_window, mlx);
 }
+
+mlx->tex.esc = mlx_xpm_file_to_image(mlx->mlx_connect, "texture/esc.xpm", &mlx->tex.width, &mlx->tex.height);
+	mlx_put_image_to_window(mlx->mlx_connect, mlx->mlx_window, mlx->tex.esc, 0, 0);

@@ -29,4 +29,7 @@ int		count_line(int fd);
 /* set_up_map.c */
 void	set_up_map(t_mlx *mlx);
 
+/* load_textures.c */
+void	load_textures(t_mlx *mlx);
+
 #endif

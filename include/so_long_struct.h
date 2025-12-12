@@ -5,6 +5,10 @@ typedef struct s_tex
 {
 	void	*tree;
 	void	*grass;
+	void	*player;
+	void	*esc;
+	int		width;
+	int		height;
 
 }	t_tex;
 

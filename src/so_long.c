@@ -15,7 +15,10 @@ int	main(int argc, char **argv)
 	ft_memset(&window, 0, sizeof(window));
 	init_data(&mlx, argv);
 	handle_window(&mlx);
-	//set_up_map(&mlx);
+	load_textures(&mlx);
+	set_up_map(&mlx);
+	mlx_loop(mlx.mlx_connect);
+
 	//close_window(&mlx);
 	return (0);
 } 
