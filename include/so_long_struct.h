@@ -42,4 +42,10 @@ typedef struct s_mlx
 	t_tex		tex;
 }				t_mlx;
 
+typedef struct s_flood
+{
+	int			collectibles_found;
+	int			exit_found;
+}				t_flood;
+
 #endif

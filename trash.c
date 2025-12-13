@@ -84,3 +84,33 @@ void	resize_window(t_mlx *mlx, int new_width, int new_height)
 
 mlx->tex.esc = mlx_xpm_file_to_image(mlx->mlx_connect, "texture/esc.xpm", &mlx->tex.width, &mlx->tex.height);
 	mlx_put_image_to_window(mlx->mlx_connect, mlx->mlx_window, mlx->tex.esc, 0, 0);
+
+
+	void	check_flag(t_mlx *mlx)
+{
+	if (mlx->flag_c == 0)
+	{
+		ft_printf("Error\nMap must contain at least one collectible\n");
+		exit(EXIT_FAILURE);
+	}
+	if (mlx->flag_e == 0)
+	{
+		ft_printf("Error\nMap must contain exactly one exit\n");
+		exit(EXIT_FAILURE);
+	}
+	if (mlx->flag_e > 1)
+	{
+		ft_printf("Error\nMap contains too many exits\n");
+		exit(EXIT_FAILURE);
+	}
+	if (mlx->flag_p == 0)
+	{
+		ft_printf("Error\nMap must contain exactly one player start position\n");
+		exit(EXIT_FAILURE);
+	}
+	if (mlx->flag_p > 1)
+	{
+		ft_printf("Error\nMap contains too many player start positions\n");
+		exit(EXIT_FAILURE);
+	}
+}

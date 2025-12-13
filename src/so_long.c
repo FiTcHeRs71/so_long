@@ -23,3 +23,4 @@ int	main(int argc, char **argv)
 
 // free file dans init data
 // close file dans init data
+//check bord que des 1 ?

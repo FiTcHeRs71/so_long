@@ -37,4 +37,11 @@ void	check_arg(char	*line, t_mlx *mlx);
 void	ft_count_and_check_args(char c, t_mlx *mlx);
 void	check_flag(t_mlx *mlx);
 
+/* path_validdation.c */
+void		valide_path(t_mlx *mlx);
+void	flood_fill(char **map_copy, int x, int y, t_flood *flood);
+char	**copy_map(char **original);
+int	find_player_position(char **map, int *x, int *y);
+
+
 #endif

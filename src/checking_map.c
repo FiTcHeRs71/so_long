@@ -20,6 +20,7 @@ void	check_map(t_mlx *mlx,char **args)
 		i++;
 	}
 	check_flag(mlx);
+	valide_path(mlx);
 }
 void	check_arg(char	*line, t_mlx *mlx)
 {
@@ -65,12 +66,12 @@ void	check_flag(t_mlx *mlx)
 		// need manger
 		exit (EXIT_FAILURE);
 	}
-	if (mlx->flag_e > 1)
+	if (mlx->flag_e != 1)
 	{
 		//trop d'exit
 		exit (EXIT_FAILURE);
 	}
-	if (mlx->flag_p > 1)
+	if (mlx->flag_p != 1)
 	{
 		// trop de player
 		exit(EXIT_FAILURE);
