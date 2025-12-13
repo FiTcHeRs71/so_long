@@ -33,6 +33,8 @@ void	load_textures(t_mlx *mlx);
 
 /* checking_map.c */
 void	check_map(t_mlx *mlx, char **args);
-void	check_arg(char	*line);
+void	check_arg(char	*line, t_mlx *mlx);
+void	ft_count_and_check_args(char c, t_mlx *mlx);
+void	check_flag(t_mlx *mlx);
 
 #endif

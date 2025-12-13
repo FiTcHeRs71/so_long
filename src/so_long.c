@@ -5,9 +5,9 @@ int	main(int argc, char **argv)
 {
 	t_mlx		mlx;
 
-	if (argc < 0)
+	if (argc != 2)
 	{
-		ft_printf("%s", argv[0]);
+		ft_printf("%s", argv[0]); // message derreur
 		return(0); // a check
 	}
 	ft_memset(&mlx, 0, sizeof(mlx));
